@@ -1,16 +1,20 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. firstly create a basic react app, 
+2. created some folders like components, assets, public, pages etc.
+3.after that install tailwindcss, react-icons, react-router-dom, and some othe packages
+4.then integrate react-router-dom in out main.jsx file, then create the routes in app.jsx file
+5.then for basic animations , install  "motion " ;-   "npm install motion"
+6. after applying little animation, we will do authentication via firebase
+    // for authentication, firstly go to firebase website and sign up
+    // then go to console
+    //click on create project and give the name to the project
+    //not want to add ai-gemini , so disable it, then continue it
+    // then again disable gemini features
+    // wait untill finishing the project
+    //click on continue
+    //click on "+add app"
+    // but we can to do authentication
+    // so we'll simply click on security and then click on authentication
+    // click on get started
+    // click on "google" and "enable" the button
+    // and give the support email and save it
+    
