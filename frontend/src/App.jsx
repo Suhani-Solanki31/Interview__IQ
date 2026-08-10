@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Router, Routes } from 'react-router'
+import { Route, Routes } from 'react-router'
 import Home from '../pages/Home.jsx'
 import Auth from '../pages/Auth.jsx'
 
