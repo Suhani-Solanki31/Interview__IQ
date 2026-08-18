@@ -82,3 +82,11 @@ export { auth, provider};
 
 
 {{TIPS(RED MARKED) :-  once .env file updates , server or client need to be restart}}
+
+=====================================================================================
+
+SETUP FOR REDUX-TOOLKIT
+
+firstly go to the "react-redux" site, then click on "get started" 
+Now go to the "tutorial" and read it , and follow the steps
+
