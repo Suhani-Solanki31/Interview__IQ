@@ -7,8 +7,12 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../utils/firebase.js";
 import axios from "axios";
 import { ServerURL } from "../App.jsx";
+import { useDispatch } from "react-redux";
+import { setUserData } from "../redux/userSlice.js";
 
-const Auth = () => {
+const Auth = ({isModel = false}) => {
+
+  const dispatch = useDispatch();
   // FireBase Authentication code
   const handleGoogleAuth = async () => {
   try {
@@ -24,22 +28,27 @@ const Auth = () => {
       { withCredentials: true }
     );
 
-    console.log("SERVER RESPONSE:", result.data);
+    // console.log("SERVER RESPONSE:", result.data);
+    dispatch(setUserData(result.data));
 
   } catch (error) {
-    console.log("FULL ERROR:", error);
-    console.log("SERVER RESPONSE:", error.response?.data);
-    console.log("SERVER STATUS:", error.response?.status);
+
+    console.log("error in auth : ",error);
+    
+    dispatch(setUserData(null));
+    
   }
   };
   return (
-    <div className="w-full min-h-screen bg-[#f3f3f3] flex items-center justify-center px-6 py-20">
+    <div className={`w-full ${isModel ? "py-4" : "min-h-screen bg-[#f3f3f3] flex items-center justify-center px-6 py-20" }
+      `}>
       <motion.div
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.05 }}
-        className="w-full max-w-md p-8 rounded-3xl bg-white shadow-2xl border border-gray-200"
-      >
+        className={`w-full ${isModel ? " max-w-md p-8 rounded-3xl" : "max-w-lg p-12 rounded-[32px]"}
+           bg-white shadow-2xl border border-gray-200`
+          }>
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="bg-black text-white p-2 rounded-lg">
             <BsRobot size={18} />

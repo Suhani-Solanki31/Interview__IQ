@@ -11,7 +11,9 @@ export const ServerURL = "http://localhost:8000"
 
 const App = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+
   useEffect(()=>{
     const getUser = async()=>{
       try {
@@ -21,13 +23,13 @@ const App = () => {
 
         dispatch(setUserData(result.data));        
       } catch (error) {
-        console.log("error in currentUser frontend : ",error);
-        dispatch(setUserData(null))
+        // console.log("error in currentUser frontend : ",error);
+        dispatch(setUserData(null));
       }
     }
 
     getUser();
-  },[])
+  },[dispatch])
 
   return (
     <Routes>
